@@ -1,0 +1,15 @@
+.About-Container {
+  background-image: url(https://images.unsplash.com/photo-1647460020084-1bb0543df372?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 284px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+.tag-title {
+  margin-left: 36%;
+  text-decoration: underline;
+}

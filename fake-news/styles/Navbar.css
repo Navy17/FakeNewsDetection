@@ -1,0 +1,40 @@
+.header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #06111c;
+  color: #f8f8ff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__logo {
+  margin: 0 20px;
+  color: #f8f8ff;
+}
+
+.header__menu {
+  width: 75%;
+  background-color: #06111c;
+  color: #f8f8ff;
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+  right: 0;
+  margin: 0 20px;
+}
+
+.header__option {
+  padding: 0 50px;
+}
+
+.logo-f {
+  color: #f8f8ff;
+}
+/* 
+.header__profile {
+  margin-top: 73%;
+  background-color: #f8f8ff;
+  background-size: 1px;
+} */
