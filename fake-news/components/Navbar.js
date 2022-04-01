@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { useState } from "react";
-
-var loginStatus = false;
+import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 
 function Navbar() {
   const [Data, setData] = useState("");
-
   const childToParent = () => {};
+  const router = useRouter();
+  const state = useSelector((state) => state.UserReducer);
 
   return (
     <div className="header">
@@ -45,9 +46,16 @@ function Navbar() {
         </div>
         <div className="header__option">
           <span>
-            <Link href="/Analyze">
+            <button
+              className="btna"
+              onClick={
+                state.user
+                  ? () => router.push("/Analyze")
+                  : () => alert("pls login")
+              }
+            >
               <a>Analyze</a>
-            </Link>
+            </button>
           </span>
         </div>
         <div className="header__option">

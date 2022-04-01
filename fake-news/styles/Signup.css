@@ -26,10 +26,11 @@
 }
 
 .button-1 {
-  background-color: #f8f8ff;
-  color: #06111c;
+  background-color: rgb(54, 69, 79);
+  color: white;
   border-radius: 15px;
   padding: 6px 15px;
+  border-color: transparent;
 }
 
 input {

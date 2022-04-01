@@ -1,0 +1,89 @@
+.main-community {
+  margin: 50px;
+  padding: 8px 8px;
+  border: 1px solid #dcdcdc;
+  border-left: hidden;
+  border-right: hidden;
+}
+.user-profile-comm {
+  display: flex;
+  align-items: center;
+}
+.user-comment-comm {
+  padding: 100px 100px;
+  font-size: 15px;
+}
+img {
+  width: 30px;
+  height: 30px;
+}
+
+.name-pro {
+  padding: 0px 40px;
+}
+.span {
+  color: gray;
+  font-size: small;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-n {
+  margin: 50px;
+  background-color: white;
+}
+
+.usercomm {
+  background-color: white;
+  padding-top: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
+  border: 1px solid #dcdcdc;
+  border-left: hidden;
+  border-right: hidden;
+  border-bottom: hidden;
+}
+
+.uc {
+  padding: 0px 100px;
+  padding-bottom: 60px;
+}
+
+.textarea {
+  font-size: 24px;
+  height: 200px;
+  width: 1054px;
+  resize: none;
+  border-radius: 5px;
+  border-color: #dcdcdc;
+}
+.textarea:hover {
+  border-color: #dcdcdc;
+}
+
+.textarea:focus {
+  border-color: #dcdcdc;
+  border-width: thin;
+  outline: none;
+}
+
+.postbtn {
+  background-color: green;
+  color: white;
+  padding: 5px 30px;
+  border-color: transparent;
+  border-radius: 5px;
+}
+
+.cb {
+  margin: 50px;
+  font-weight: bold;
+}
+
+.co {
+  padding: 10px 10px;
+}
+
+.h2 {
+  color: #353935;
+}

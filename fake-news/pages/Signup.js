@@ -1,65 +1,40 @@
 import GoogleLogin from "react-google-login";
-import { fetchBasicProfile } from "react-google-login";
+import { useState } from "react";
+import { ApiCallReg } from "../pages/api/ApiCall";
 
 const key2 =
   "429217917988-r26744puttl2p2lu9gp4ilnjvdki0vbf.apps.googleusercontent.com";
-
-import { useState } from "react";
-
 function Signup() {
-  const handleLogin = (profileObj) => {
-    console.log(profileObj);
-  };
+  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [user, setUser] = useState({
-    name: "",
-    username: "",
-    email: "",
-    password: "",
-  });
-  let name, value;
-  const getUserData = (e) => {
-    name = e.target.name;
-    value = e.target.value;
-
-    setUser({ ...user, [name]: value });
-  };
-
-  const postData = async (e) => {
+  const handleOnSubmit = async (e) => {
     e.preventDefault();
 
-    const { name, username, email, password } = user;
-
-    const res = await fetch(
-      "https://mypro-c1642-default-rtdb.firebaseio.com/registrationForm.json",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          username,
-          email,
-          password,
-        }),
-      }
-    );
+    ApiCallReg({
+      name: name,
+      username: username,
+      email: email,
+      password: password,
+    });
   };
+
+  const handleLogin = (profileObj) => {};
 
   return (
     <div className="signup">
       <div className="signup__container">
         <div className="form__container">
-          <form onSubmit={postData} method="POST">
+          <form action="" onSubmit={handleOnSubmit}>
             <h5>Name</h5>
             <input
               className="input__"
               type="text"
-              name="name"
               placeholder="Name"
-              value={user.name}
-              onChange={getUserData}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               required
               autoComplete="off"
             />
@@ -69,10 +44,9 @@ function Signup() {
             <input
               className="input__"
               type="text"
-              name="username"
               placeholder="Create Username"
-              value={user.username}
-              onChange={getUserData}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               required
               autoComplete="off"
             />
@@ -82,10 +56,9 @@ function Signup() {
             <input
               className="input__"
               type="text"
-              name="email"
               placeholder="Email"
-              value={user.email}
-              onChange={getUserData}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
               autoComplete="off"
             />
@@ -95,10 +68,9 @@ function Signup() {
             <input
               className="input__"
               type="password"
-              name="password"
               placeholder="Create Password"
-              value={user.password}
-              onChange={getUserData}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               required
               autoComplete="off"
             />
@@ -106,7 +78,7 @@ function Signup() {
             <br />
             &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
             <button type="submit" className="button-1">
-              Submit
+              Signup
             </button>
           </form>
         </div>
@@ -118,7 +90,6 @@ function Signup() {
             onSuccess={handleLogin}
             onFailure={handleLogin}
             cookiePolicy={"single_host_origin"}
-            isSignedIn={true}
           ></GoogleLogin>
         </div>
       </div>

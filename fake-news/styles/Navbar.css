@@ -38,3 +38,10 @@
   background-color: #f8f8ff;
   background-size: 1px;
 } */
+
+.btna {
+  font-size: 15px;
+  background-color: transparent;
+  color: #f8f8ff;
+  border-color: transparent;
+}
