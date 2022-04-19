@@ -27,6 +27,9 @@ const userSchema = mongoose.Schema(
       max: 50,
       required: true,
     },
+    profileUrl: {
+      type: String,
+    },
   },
   {
     timestamps: true,

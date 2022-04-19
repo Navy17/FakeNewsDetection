@@ -1,27 +1,33 @@
-import GoogleLogin from "react-google-login";
 import { useState } from "react";
 import { ApiCallReg } from "../pages/api/ApiCall";
+import Login from "./loginWithGoogle/Login";
+import { useSelector, useDispatch } from "react-redux";
+import { useRouter } from "next/router";
 
-const key2 =
-  "429217917988-r26744puttl2p2lu9gp4ilnjvdki0vbf.apps.googleusercontent.com";
 function Signup() {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.UserReducer);
   const handleOnSubmit = async (e) => {
     e.preventDefault();
 
-    ApiCallReg({
-      name: name,
-      username: username,
-      email: email,
-      password: password,
-    });
+    ApiCallReg(
+      {
+        name: name,
+        username: username,
+        email: email,
+        password: password,
+      },
+      dispatch
+    );
+    if (state.user) {
+      console.log(state.user.statusCheck);
+    }
   };
-
-  const handleLogin = (profileObj) => {};
 
   return (
     <div className="signup">
@@ -84,13 +90,7 @@ function Signup() {
         </div>
         <h2>&#160;&#160;OR&#160;&#160;</h2>
         <div className="form__container1">
-          <GoogleLogin
-            clientId={key2}
-            buttonText="Login with Google"
-            onSuccess={handleLogin}
-            onFailure={handleLogin}
-            cookiePolicy={"single_host_origin"}
-          ></GoogleLogin>
+          <Login label="Signup with Google" />
         </div>
       </div>
     </div>

@@ -25,37 +25,28 @@ export default function Home() {
 
         <div className={styles.main_container}>
           <div className={styles.main1}>
-            <a href="https://timesofindia.indiatimes.com/">
-              <h2>Times of India &rarr;</h2>
-              <p>
-                <a href="https://timesofindia.indiatimes.com/">
-                  Read this online edition of newspaper and keep yourself
-                  updated.
-                </a>
-              </p>
-            </a>
+            <h2>Times of India &rarr;</h2>
+            <p>
+              <a href="https://timesofindia.indiatimes.com/">
+                Read this online edition of newspaper and keep yourself updated.
+              </a>
+            </p>
           </div>
           <div className={styles.main1}>
-            <a href="https://www.bbc.com/news">
-              <h2>BBC News &rarr;</h2>
-              <p>
-                <a href="https://www.bbc.com/news">
-                  Read this online edition of newspaper and keep yourself
-                  updated.
-                </a>
-              </p>
-            </a>
+            <h2>BBC News &rarr;</h2>
+            <p>
+              <a href="https://www.bbc.com/news">
+                Read this online edition of newspaper and keep yourself updated.
+              </a>
+            </p>
           </div>
           <div className={styles.main1}>
-            <a href="https://edition.cnn.com/">
-              <h2>CCN News &rarr;</h2>
-              <p>
-                <a href="https://edition.cnn.com/">
-                  Read this online edition of newspaper and keep yourself
-                  updated.
-                </a>
-              </p>
-            </a>
+            <h2>CCN News &rarr;</h2>
+            <p>
+              <a href="https://edition.cnn.com/">
+                Read this online edition of newspaper and keep yourself updated.
+              </a>
+            </p>
           </div>
         </div>
       </main>

@@ -5,14 +5,15 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 16px 20px;
-  padding-bottom: 200px;
+  padding-bottom: 277px;
   justify-content: center;
   align-items: center;
   overflow-y: hidden;
 }
 .form-signin {
+  border: 1px thin solid;
   background-color: transparent;
-  margin-top: 11%;
+  margin-top: 0;
   margin-left: 41%;
   margin-right: 42%;
   padding: 10px 20px;
@@ -34,4 +35,9 @@ input:hover {
 }
 input:focus {
   outline: none;
+}
+
+.signin-google {
+  margin-left: 46%;
+  padding: 7px;
 }

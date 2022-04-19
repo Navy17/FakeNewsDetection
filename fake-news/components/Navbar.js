@@ -1,13 +1,19 @@
 import Link from "next/link";
-import { useState } from "react";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 
 function Navbar() {
-  const [Data, setData] = useState("");
-  const childToParent = () => {};
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   const router = useRouter();
   const state = useSelector((state) => state.UserReducer);
+  const profilePic = state.user
+    ? state.user.profileUrl
+      ? state.user.profileUrl
+      : "img_206976.png"
+    : "img_206976.png";
 
   return (
     <div className="header">
@@ -17,41 +23,39 @@ function Navbar() {
 
       <div className="header__menu">
         <div className="header__option">
-          <Link href="/Community">
-            <a>
-              <span>Community</span>
-            </a>
-          </Link>
-        </div>
-
-        <div className="header__option">
           <Link href="/About">
             <a>
               <span>About</span>
             </a>
           </Link>
         </div>
-        <div className="header__option">
-          <Link href="/Signin">
-            <a>
-              <span>Signin</span>
+        {!state.user ? (
+          <div className="btn11" hidden="">
+            <Link href="/Signin">
+              <a>
+                <span className="btn11">Signin</span>
+              </a>
+            </Link>
+            &#160;&#160;|&#160;&#160;
+            <Link href="/Signup">
+              <a>
+                <span className="btn11">Signup</span>
+              </a>
+            </Link>
+          </div>
+        ) : (
+          <div className="btn11" hidden="">
+            <a onClick={refreshPage}>
+              <span className="btn11">Logout</span>
             </a>
-          </Link>
-          &#160;&#160;|&#160;&#160;
-          <Link href="/Signup">
-            <a>
-              <span>Signup</span>
-            </a>
-          </Link>
-        </div>
-        <div className="header__option">
+          </div>
+        )}
+        <div className="header__option1 ">
           <span>
             <button
               className="btna"
-              onClick={
-                state.user
-                  ? () => router.push("/Analyze")
-                  : () => alert("pls login")
+              onClick={() =>
+                state.user ? router.push("/Analyze") : alert("Please login ")
               }
             >
               <a>Analyze</a>
@@ -65,6 +69,9 @@ function Navbar() {
             </a>
           </Link>
         </div>
+      </div>
+      <div className="im">
+        <img className="img" src={profilePic} />
       </div>
     </div>
   );

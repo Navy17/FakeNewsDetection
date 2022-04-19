@@ -5,7 +5,7 @@ function Analyze() {
     <div className="Container">
       <div className="input-c">
         <div className="sear">
-          <h2>LETS GET INTO THE WORLD OF TRUTHS! {state.user.email}🔦</h2>
+          <h2>LETS GET INTO THE WORLD OF TRUTHS! 🔦</h2>
           <br />
           <br />
           <textarea
@@ -17,7 +17,7 @@ function Analyze() {
 
         <div className="search">
           <button className="btn-A">
-            <a href="/Analyze">Reveal the truth behind it...</a>
+            <a href="">Reveal the truth behind it...</a>
           </button>
         </div>
       </div>

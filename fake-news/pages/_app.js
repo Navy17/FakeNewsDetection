@@ -9,15 +9,14 @@ import "../styles/Community.css";
 import "../public/img_206976.png";
 import store from "./store";
 import { Provider } from "react-redux";
-
 function MyApp({ Component, pageProps }) {
   return (
-    <Provider store={store}>
-      <div>
+    <div>
+      <Provider store={store}>
         <Navbar />
         <Component {...pageProps} />
-      </div>
-    </Provider>
+      </Provider>
+    </div>
   );
 }
 

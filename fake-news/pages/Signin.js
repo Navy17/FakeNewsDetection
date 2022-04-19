@@ -1,9 +1,18 @@
 import { useEffect, useState, useRef } from "react";
 import { ApiCallCheck } from "../pages/api/ApiCall";
 import { useSelector, useDispatch } from "react-redux";
+import Login from "./loginWithGoogle/Login";
+import { useRouter } from "next/router";
 
 function Signin() {
-  const state = useSelector((state) => state.UserReducer);
+  const router = useRouter();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const state = useSelector((state) => {
+    return state.UserReducer;
+  });
+
   const dispatch = useDispatch();
   const initialValue = useRef(true);
 
@@ -15,9 +24,6 @@ function Signin() {
     }
   }, [state]);
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     if (username !== "" || password !== "") {
@@ -28,6 +34,7 @@ function Signin() {
         },
         dispatch
       );
+      router.push("/Analyze");
       setPassword("");
       setUsername("");
     }
@@ -37,6 +44,7 @@ function Signin() {
     <div className="signin-container">
       <form onSubmit={handleOnSubmit}>
         <div className="form-signin">
+          <br />
           <h2> &#160; &#160;&#160; &#160;&#160;Username</h2>
           <input
             type="text"
@@ -60,6 +68,10 @@ function Signin() {
           <br />
           &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;
           <button className="btn-1">Login</button>
+        </div>
+        <br />
+        <div className="signin-google">
+          <Login label="Sign in" />
         </div>
       </form>
     </div>
